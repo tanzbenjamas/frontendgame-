@@ -116,6 +116,7 @@ export class Mariamgame1Component implements OnInit {
   }
 
   ngOnInit() {
+    
     this.mariamService.getQuestion().subscribe(data => {
       this.questions = data;
     });
@@ -124,6 +125,11 @@ export class Mariamgame1Component implements OnInit {
       let quest_id = params['quest_id'];
       if(quest_id){
         this.currentQuestion = quest_id;
+        if(quest_id == 0){
+          localStorage.setItem("current_point", "0");
+        }
+      }else{
+        localStorage.setItem("current_point", "0");
       }
     });
   }
