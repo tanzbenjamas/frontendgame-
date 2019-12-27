@@ -8,9 +8,8 @@ import { WrongComponent } from './wrong/wrong.component';
 import { SummaryComponent } from './summary/summary.component';
 
 const appRoutes: Routes = [
-  // { path: '', redirectTo: '/mariamgame1', pathMatch: 'full' },
-  { path: '', redirectTo: '/mariamgame', pathMatch: 'full' },
-  { path: 'demomariam' ,component:DemomariamComponent },
+  { path: '', redirectTo: '/intro', pathMatch: 'full' },
+  { path: 'intro' ,component:DemomariamComponent },
   { path: 'summary' ,component:SummaryComponent },
   { path: 'mariamgame' ,component:Mariamgame1Component },
   { path: 'mariamgame/:quest_id' ,component:Mariamgame1Component },

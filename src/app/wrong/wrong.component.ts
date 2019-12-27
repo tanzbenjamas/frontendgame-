@@ -49,7 +49,7 @@ export class WrongComponent implements OnInit {
   reloadQuestion(){
     let re_point = "0";
     localStorage.setItem("current_point", re_point);
-    this.router.navigate(["/mariamgame", 0]); //go to first question & re-point to 0.
+    this.router.navigate(["/intro"]); //go to first question & re-point to 0.
   }
 
 }

@@ -14,6 +14,7 @@ export class SummaryComponent implements OnInit {
 
   constructor(private router:Router, private route: ActivatedRoute, private mariamService: MariamService, private cookieService: CookieService) { 
     this.cookie = this.cookieService.getAll();
+    this.summary = localStorage.getItem("current_point");
   }
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class SummaryComponent implements OnInit {
   reloadQuestion(){
     let re_point = "0";
     localStorage.setItem("current_point", re_point);
-    this.router.navigate(["/mariamgame", 0]); //go to first question & re-point to 0.
+    this.router.navigate(["/intro"]);
+    //this.router.navigate(["/mariamgame", 0]); //go to first question & re-point to 0.
   }
 }

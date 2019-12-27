@@ -1,37 +1,90 @@
+.background {
+    height: 100vh;
+    background-size: 100% 100%;
+    background-image: url('/assets/images/bg_summary.jpg');
+}
+
+.title_center {
+    text-align: center;
+    font-family: 'Mitr';
+    font-size: 45px;
+}
+
+.btn_play {
+    border: none;
+    font-family: 'Mitr';
+    font-size: 24px;
+    padding: 10px 20px;
+    width: auto;
+    position: absolute;
+    left: 45%;
+    background-color: cornflowerblue;
+}
+
+.text_center {
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Mitr';
+    font-size: 24px;
+}
+
+.img_center {
+    border: none;
+    width: 400px;
+    height: auto;
+    top: -200px;
+    position: absolute;
+    left: calc((100% - 400px) /2);
+}
+
+.btn_reload {
+    border: none;
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+}
+
+.txt_summary {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    font-size: 90px;
+    font-family: 'Mitr'!important;
+    color: cadetblue;
+}
+
 .example-card {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     max-width: 450px;
-    background-color:white;
+    background-color: white;
     color: black;
-  
-    }
-  
-  .example-header-image {
-      background-size: cover;
-     
-    }
-  
-    .example-card1{
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: flex-end;
-    }
-  
-    button {
-      justify-content: flex-end;
-      background-color:green;
-      color: white;
-      padding: 10px 10px;
-      cursor: pointer;
-      width: 100px;
-    
-    }
-    .container {
-      display: flex;
-    }
-    
-    .fill {
-      flex: 1;
-    }
+}
+
+.example-header-image {
+    background-size: cover;
+}
+
+.example-card1 {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: flex-end;
+}
+
+button {
+    justify-content: flex-end;
+    background-color: green;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.container {
+    display: flex;
+}
+
+.fill {
+    flex: 1;
+}
