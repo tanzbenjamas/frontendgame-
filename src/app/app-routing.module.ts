@@ -9,11 +9,11 @@ import { SummaryComponent } from './summary/summary.component';
 
 const appRoutes: Routes = [
   // { path: '', redirectTo: '/mariamgame1', pathMatch: 'full' },
-  { path: '', redirectTo: '/summary', pathMatch: 'full' },
+  { path: '', redirectTo: '/mariamgame', pathMatch: 'full' },
   { path: 'demomariam' ,component:DemomariamComponent },
   { path: 'summary' ,component:SummaryComponent },
-  { path: 'mariamgame1' ,component:Mariamgame1Component },
-  { path: 'mariamgame1/:quest_id' ,component:Mariamgame1Component },
+  { path: 'mariamgame' ,component:Mariamgame1Component },
+  { path: 'mariamgame/:quest_id' ,component:Mariamgame1Component },
   { path: 'correct/:quest_id' ,component:CorrectComponent },
   { path: 'wrong/:quest_id' ,component:WrongComponent }
 ];

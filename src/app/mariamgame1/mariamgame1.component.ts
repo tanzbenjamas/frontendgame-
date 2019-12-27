@@ -9,18 +9,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./mariamgame1.component.css']
 })
 export class Mariamgame1Component implements OnInit {
- [x: string]: any;
- chioce: Array<any> 
- currentQuestion: any = 0
- currentAnswer : any = ""
- showNext: any = false
- disabled = true;
+  [x: string]: any;
+  chioce: Array<any> 
+  currentQuestion: any = 0
+  currentAnswer : any = ""
+  showNext: any = false
+  disabled = true;
 
- select = '';
- decrition = '';
- views:any = {
-  chioce:null, 
-}
+  select = '';
+  decrition = '';
+  views:any = {
+    chioce:null, 
+  }
 
 //  questions: Array<any> = [
 //   {

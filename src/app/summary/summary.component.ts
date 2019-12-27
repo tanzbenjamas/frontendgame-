@@ -18,7 +18,7 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit() {
     this.summary = localStorage.getItem("current_point");
-    console.log("summary: ", this.summary);
+    // console.log("summary: ", this.summary);
     this.recordSummary();
   }
 
@@ -43,6 +43,6 @@ export class SummaryComponent implements OnInit {
   reloadQuestion(){
     let re_point = "0";
     localStorage.setItem("current_point", re_point);
-    this.router.navigate(["/mariamgame1", 0]); //go to first question & re-point to 0.
+    this.router.navigate(["/mariamgame", 0]); //go to first question & re-point to 0.
   }
 }

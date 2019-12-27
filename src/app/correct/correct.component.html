@@ -1,13 +1,14 @@
 <body>
+    <h1 class="title_center"><img class="img_title" src="assets/images/icons/correct.png">ถูกต้องแล้ว<img class="img_title" src="assets/images/icons/correct.png"></h1>
+
     <div class="container-fluid h-100 correct_background">
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col-12">
-                <h1 class="title_center"><img class="img_title" src="assets/images/icons/correct.png">ถูกต้องแล้ว<img class="img_title" src="assets/images/icons/correct.png"></h1>
-            </div>
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="content_center">
-                    <img class="img_center" src="assets/images/whales.png">
+                    <img *ngIf="!checklink" class="img_center" src="assets/images/whales.png">
+
+                    <iframe *ngIf="checklink" width="560" height="315" [src]="safeURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col-2">

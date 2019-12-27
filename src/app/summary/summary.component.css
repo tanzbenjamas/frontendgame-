@@ -8,12 +8,14 @@
     text-align: center;
     padding-top: 30px;
     font-family: 'Mitr'!important;
+    font-size: 45px;
 }
 
 .img_center {
     border: none;
     width: 100%;
     height: auto;
+    margin-top: -30%;
 }
 
 .btn_reload {
@@ -21,4 +23,13 @@
     width: 80px;
     position: absolute;
     bottom: 0;
+}
+
+.txt_summary {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    font-size: 90px;
+    font-family: 'Mitr'!important;
+    color: cadetblue;
 }

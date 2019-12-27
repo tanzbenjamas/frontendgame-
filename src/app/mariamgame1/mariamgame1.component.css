@@ -10,6 +10,8 @@
     background-color: aquamarine;
     color: #333333;
     border: none;
+    font-size: 24px;
+    font-family: 'Mitr';
 }
 
 .center_content {
@@ -21,6 +23,8 @@
 .title_guest {
     margin-bottom: 30px;
     text-align: center;
+    font-family: 'Mitr';
+    font-size: 45px;
 }
 
 .img_right {
