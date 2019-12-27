@@ -10,12 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class Mariamgame1Component implements OnInit {
   [x: string]: any;
-  chioce: Array<any> 
+  choice: any;
   currentQuestion: any = 0
   currentAnswer : any = ""
   showNext: any = false
   disabled = true;
-
+  questions: any;
+  questions_name:any;
   select = '';
   decrition = '';
   views:any = {
@@ -117,10 +118,6 @@ export class Mariamgame1Component implements OnInit {
 
   ngOnInit() {
     
-    this.mariamService.getQuestion().subscribe(data => {
-      this.questions = data;
-    });
-
     this.route.params.subscribe(params => {
       let quest_id = params['quest_id'];
       if(quest_id){
@@ -132,56 +129,54 @@ export class Mariamgame1Component implements OnInit {
         localStorage.setItem("current_point", "0");
       }
     });
+
+    this.mariamService.getQuestion().subscribe(data => {
+      this.questions = data[this.currentQuestion];
+      this.choice = data[this.currentQuestion].choice;
+      this.questions_name = data[this.currentQuestion].q_name;
+    });
   }
 
 answer(correct, answer){
-  // console.log("correct",correct);
-  // console.log("answer",answer);
   
   if(correct === answer){
     this.router.navigate(["/correct", this.currentQuestion]);
   }else {
     this.router.navigate(["/wrong", this.currentQuestion]);
   }
-
-  // if(this.currentQuestion == 9){
-  //   this.showNext = false;
-  // }{
-  //   this.showNext = true;
-  // }
 }
 
 
 // ด้านล่างไม่ได้ใช้
-question(v){
-  console.log("v",v)
-  if(v === this.questions[this.currentQuestion].question){
-  }
-}
+// question(v){
+//   console.log("v",v)
+//   if(v === this.questions[this.currentQuestion].question){
+//   }
+// }
 
-next(){
-  if(this.currentQuestion<this.questions.length){
-    this.currentQuestion ++
-  }
+// next(){
+//   if(this.currentQuestion<this.questions.length){
+//     this.currentQuestion ++
+//   }
    
-   this.currentAnswer = "";
-    console.log("next")
-    this.showNext = false
- }
+//    this.currentAnswer = "";
+//     console.log("next")
+//     this.showNext = false
+//  }
 
-save(){
-  this.httpClient.post('http://localhost:8080/chioce/' ,{})
-   .subscribe(
-     data => {
-        this.chioce == this.questions;
-        console.log('PUT Request is successful', data);
-        this.resetsave();
-      }
-   );
-  }
+// save(){
+//   this.httpClient.post('http://localhost:8080/chioce/' ,{})
+//    .subscribe(
+//      data => {
+//         this.chioce == this.questions;
+//         console.log('PUT Request is successful', data);
+//         this.resetsave();
+//       }
+//    );
+//   }
 
-  resetsave(){
-    console.log(this.answer);
-    console.log(this.question);
-  }
+//   resetsave(){
+//     console.log(this.answer);
+//     console.log(this.question);
+//   }
 }
