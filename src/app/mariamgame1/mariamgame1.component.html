@@ -1,0 +1,30 @@
+<body >
+  <br><br><br><br><br><br>
+<mat-card class="example-card">
+  <div style="text-align:center">
+<h1>
+  <a  style="font-size:large;"> TEST MARIAM </a>
+</h1>
+<br>
+<img mat-card-image src="https://pbs.twimg.com/media/D-sBvl0VUAADZWs?format=jpg&name=large" alt="mariam on twiter"  >
+  </div>
+  <br>
+
+<mat-radio-group aria-label="Select an option">
+    <div> <p>{{questions[currentQuestion].question}}</p> </div>
+
+      <mat-radio-button (click)="answer('1')" [value]="1"   > {{questions[currentQuestion].choice_one}} </mat-radio-button> <br>
+      <mat-radio-button (click)="answer('2')" [value]="2"   > {{questions[currentQuestion].choice_two}} </mat-radio-button><br>
+      <mat-radio-button (click)="answer('3')" [value]="3"   > {{questions[currentQuestion].choice_three}} </mat-radio-button><br>
+    </mat-radio-group>
+
+     <div *ngIf="showNext">
+      <p>{{currentAnswer}}</p>
+      <button mat-raised-button (click)="next()"  style=" width:110px; background-color:darkslategrey; color:white; font-size: small; text-align:center " > Next </button>
+  </div>
+
+  
+</mat-card>
+</body>
+
+
