@@ -20,7 +20,6 @@ export class Mariamgame1Component implements OnInit {
  decrition = '';
 
  questions: Array<any> = [
-   
   {
     id: '1',
     answer: '2',
@@ -131,16 +130,20 @@ export class Mariamgame1Component implements OnInit {
   //   })
 
  }
-   answer(v){
+  answer(v){
    console.log("v",v)
   if(v === this.questions[this.currentQuestion].answer){
     this.currentAnswer = "ถูก"
   }
-else {
+  else {
     this.currentAnswer = "ผิด"
   }
-this.showNext = true
- }
+
+  if(this.currentQuestion == 9){
+    this.showNext = false;
+  }
+    this.showNext = true
+  }
 
  question(v){
   console.log("v",v)
@@ -148,29 +151,29 @@ this.showNext = true
 }
 }
 
- next(){
+next(){
    if(this.currentQuestion<this.questions.length){
      this.currentQuestion ++
    }
    
-   this.currentAnswer = ""
+   this.currentAnswer = "";
     console.log("next")
     this.showNext = false
  }
 
 save(){
-   this.httpClient.post('http://localhost:8080/chioce/' ,{})
+  this.httpClient.post('http://localhost:8080/chioce/' ,{})
    .subscribe(
      data => {
-       this.chioce == this.questions;
-       console.log('PUT Request is successful', data);
-       this.resetsave();
+        this.chioce == this.questions;
+        console.log('PUT Request is successful', data);
+        this.resetsave();
       }
    );
   }
 
   resetsave(){
-  console.log(this.answer);
-  console.log(this.question);
+    console.log(this.answer);
+    console.log(this.question);
   }
 }
