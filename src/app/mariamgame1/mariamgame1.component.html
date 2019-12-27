@@ -1,4 +1,39 @@
 <body>
+    <div class="container-fluid h-100 quest_background">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-6">
+                <div class="quest_content">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12">
+                            <h1 class="title_guest">{{questions[currentQuestion].q_name}}</h1>
+                        </div>
+
+
+                        <div class="col-12 center_content" *ngFor="let item of questions[currentQuestion].choice">
+                            <button class="btn_quest" (click)="answer(questions[currentQuestion].q_ans, item.c_ans)">{{item.c_name}}</button>
+                        </div>
+
+
+                        <!-- <div class="col-12 center_content">
+                            <button class="btn_quest" (click)="answer('2')">{{questions[currentQuestion].choice_two}}</button>
+                        </div>
+                        <div class="col-12 center_content">
+                            <button class="btn_quest" (click)="answer('3')">{{questions[currentQuestion].choice_three}}</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="quest_content">
+                    <img class="img_right" src="assets/images/whales.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- <body>
     <br><br><br><br><br><br>
     <mat-card class="example-card">
         <div style="text-align:center">
@@ -30,4 +65,4 @@
             <button mat-raised-button (click)="save()" style=" width:110px; background-color: #333333; color:white; font-size: small; text-align:center "> Save </button>
         </div>
     </mat-card>
-</body>
+</body> -->

@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DemomariamComponent } from './demomariam/demomariam.component';
 import { Mariamgame1Component } from './mariamgame1/mariamgame1.component';
-import { Mariamgame2Component } from './mariamgame2/mariamgame2.component';
 import { CorrectComponent } from './correct/correct.component';
 import { WrongComponent } from './wrong/wrong.component';
+import { SummaryComponent } from './summary/summary.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/demomariam', pathMatch: 'full' },
+  // { path: '', redirectTo: '/mariamgame1', pathMatch: 'full' },
+  { path: '', redirectTo: '/summary', pathMatch: 'full' },
   { path: 'demomariam' ,component:DemomariamComponent },
+  { path: 'summary' ,component:SummaryComponent },
   { path: 'mariamgame1' ,component:Mariamgame1Component },
-  { path: 'mariamgame2' ,component:Mariamgame2Component },
-  { path: 'correct' ,component:CorrectComponent },
-  { path: 'wrong' ,component:WrongComponent }
+  { path: 'mariamgame1/:quest_id' ,component:Mariamgame1Component },
+  { path: 'correct/:quest_id' ,component:CorrectComponent },
+  { path: 'wrong/:quest_id' ,component:WrongComponent }
 ];
 
 @NgModule({

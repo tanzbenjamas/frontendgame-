@@ -24,6 +24,8 @@ import { Mariamgame2Component } from './mariamgame2/mariamgame2.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { CorrectComponent } from './correct/correct.component';
 import { MariamService } from './service/mariam.service';
+import { CookieService } from 'ngx-cookie-service';
+import { SummaryComponent } from './summary/summary.component';
 
 
 // const appRoutes: Routes = [
@@ -40,7 +42,8 @@ import { MariamService } from './service/mariam.service';
     Mariamgame1Component,
     Mariamgame2Component,
     WrongComponent,
-    CorrectComponent
+    CorrectComponent,
+    SummaryComponent
 ],
   imports: [
     BrowserModule,
@@ -71,7 +74,10 @@ import { MariamService } from './service/mariam.service';
     AppRoutingModule
 ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
-  providers: [MariamService],
+  providers: [
+    MariamService,
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 

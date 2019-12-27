@@ -1,0 +1,24 @@
+.correct_background {
+    height: 100vh;
+    background-size: 100% 100%;
+    background-image: url('/assets/images/bg_summary.jpg');
+}
+
+.title_center {
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Mitr'!important;
+}
+
+.img_center {
+    border: none;
+    width: 100%;
+    height: auto;
+}
+
+.btn_reload {
+    border: none;
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+}
