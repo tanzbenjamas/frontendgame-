@@ -51,11 +51,12 @@
 }
 
 .text_answer {
-    width: 100%;
+    width: 94%;
     text-align: center;
     font-family: 'Mitr';
     font-weight: lighter;
     position: absolute;
+    padding: 0px 15px;
     top: 140px;
 }
 
