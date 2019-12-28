@@ -15,6 +15,9 @@ export class SummaryComponent implements OnInit {
   constructor(private router:Router, private route: ActivatedRoute, private mariamService: MariamService, private cookieService: CookieService) { 
     this.cookie = this.cookieService.getAll();
     this.summary = localStorage.getItem("current_point");
+
+    //  play sound background. 
+    this.playAudioSummary();
   }
 
   ngOnInit() {
@@ -32,7 +35,7 @@ export class SummaryComponent implements OnInit {
     };
 
     this.mariamService.postScore(total).subscribe(data => {
-      console.log("data:", data);
+      //console.log("data:", data);
     });
   }
 
@@ -45,6 +48,12 @@ export class SummaryComponent implements OnInit {
     let re_point = "0";
     localStorage.setItem("current_point", re_point);
     this.router.navigate(["/intro"]);
-    //this.router.navigate(["/mariamgame", 0]); //go to first question & re-point to 0.
+  }
+
+  playAudioSummary(){
+    let audio = new Audio();
+    audio.src = "assets/sound/audience-clapping.mp3";
+    audio.load();
+    audio.play();
   }
 }

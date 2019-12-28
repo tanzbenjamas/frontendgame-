@@ -8,7 +8,7 @@
     font-family: 'Mitr';
     position: absolute;
     top: 30px;
-    left: 40%;
+    left: 38%;
 }
 
 .img_title {
@@ -47,6 +47,16 @@
     border: none;
     width: 450px;
     height: 500px;
+    margin-top: 60px;
+}
+
+.text_answer {
+    width: 100%;
+    text-align: center;
+    font-family: 'Mitr';
+    font-weight: lighter;
+    position: absolute;
+    top: 140px;
 }
 
 

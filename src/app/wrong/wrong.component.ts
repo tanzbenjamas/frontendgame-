@@ -16,23 +16,33 @@ export class WrongComponent implements OnInit {
   quest_id: any;
   safeURL: any;
   checklink: any;
+  answer: any;
 
   constructor(private router:Router, private route: ActivatedRoute, private mariamService: MariamService, private sanitizer: DomSanitizer) {
     // get index of question.
     this.route.params.subscribe(params => {
       this.quest_id = parseInt(params['quest_id']);
    });
+
+   //  play sound background when answer WRONG. 
+   this.playAudioWrong();
   }
 
   ngOnInit() {
     // call services for check length of data.
     this.mariamService.getQuestion().subscribe(data => {
-      this.question = data;  
-      this.last_questions = data.length;
+      this.question = data[this.quest_id];  
 
-      this.checklink = this.question[this.quest_id].link;
+      this.question.choice.forEach(element => {
+        if(this.question.q_ans == element.c_ans){
+          this.answer = element.c_name;
+        }
+      });
+
+      this.last_questions = data.length;
+      this.checklink = this.question.link;
       if(this.checklink){
-        this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.question[this.quest_id].link);
+        this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.question.link);
       }
     });
   }
@@ -49,7 +59,14 @@ export class WrongComponent implements OnInit {
   reloadQuestion(){
     let re_point = "0";
     localStorage.setItem("current_point", re_point);
-    this.router.navigate(["/intro"]); //go to first question & re-point to 0.
+    this.router.navigate(["/intro"]);
+  }
+
+  playAudioWrong(){
+    let audio = new Audio();
+    audio.src = "assets/sound/wrong-sound.mp3";
+    audio.load();
+    audio.play();
   }
 
 }
