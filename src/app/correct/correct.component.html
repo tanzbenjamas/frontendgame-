@@ -1,17 +1,44 @@
-<body >
-  <br><br><br><br><br><br>
-<mat-card class="example-card">
-  <div style="text-align:center">
-<h1>
-  <a  style="font-size:large;"> Correct </a>
-</h1>
-<br>
-<img mat-card-image src="https://www.clipartwiki.com/clipimg/detail/182-1821065_positive-png-376210-check-button-png.png" alt="mariam on twiter"  >
-  </div>
-  <br>
-  
-  <a >TESTMATIAMNAJA//คำอธิบาย</a>
-  <br>
-  <button mat-raised-button  style=" width:110px; background-color:darkslategrey; color:white; font-size: small; text-align:center "  [routerLink]="['/mariamgame2']" > GO </button>
-</mat-card>
+<body>
+    <h1 class="title_center"><img class="img_title" src="assets/images/icons/correct.png">ถูกต้องแล้ว<img class="img_title" src="assets/images/icons/correct.png"></h1>
+    <h2 class="text_answer">คำตอบคือ {{answer}}</h2>
+
+    <div class="container-fluid h-100 correct_background">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-2"></div>
+            <div class="col-8">
+
+                <div class="content_center">
+                    <img *ngIf="!checklink" class="img_center" src="assets/images/whales.png">
+
+                    <iframe *ngIf="checklink" width="560" height="315" [src]="safeURL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="next_guest" (click)="nextQuestion()">ถัดไป</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- button reload -->
+    <img class="btn_reload" (click)="reloadQuestion()" src="assets/images/icons/reload.png">
 </body>
+
+
+<!-- <body>
+    <br><br><br><br><br><br>
+    <mat-card class="example-card">
+        <div style="text-align:center">
+            <h1>
+                <a style="font-size:large;"> Correct </a>
+            </h1>
+            <br>
+            <img mat-card-image src="https://www.clipartwiki.com/clipimg/detail/182-1821065_positive-png-376210-check-button-png.png" alt="mariam on twiter">
+        </div>
+        <br>
+
+        <a>TESTMATIAMNAJA//คำอธิบาย</a>
+        <br>
+        <h1>This point {{total}}</h1>
+        <button mat-raised-button style=" width:110px; background-color:darkslategrey; color:white; font-size: small; text-align:center " [routerLink]="['/mariamgame2']"> GO </button>
+    </mat-card>
+</body> -->

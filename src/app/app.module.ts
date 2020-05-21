@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatDatepickerModule, MatNativeDateModule, MatRadioModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
@@ -23,15 +24,17 @@ import { Mariamgame2Component } from './mariamgame2/mariamgame2.component';
 import { WrongComponent } from './wrong/wrong.component';
 import { CorrectComponent } from './correct/correct.component';
 import { MariamService } from './service/mariam.service';
+import { CookieService } from 'ngx-cookie-service';
+import { SummaryComponent } from './summary/summary.component';
 
 
-const appRoutes: Routes = [
-    { path: 'demomariam' ,component:DemomariamComponent },
-    { path: 'mariamgame1' ,component:Mariamgame1Component },
-    { path: 'mariamgame2' ,component:Mariamgame2Component },
-    { path: 'wrong' ,component:WrongComponent },
-    { path: 'correct' ,component:CorrectComponent },
-  ];
+// const appRoutes: Routes = [
+//     { path: 'demomariam' ,component:DemomariamComponent },
+//     { path: 'mariamgame1' ,component:Mariamgame1Component },
+//     { path: 'mariamgame2' ,component:Mariamgame2Component },
+//     { path: 'wrong' ,component:WrongComponent },
+//     { path: 'correct' ,component:CorrectComponent },
+//   ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ const appRoutes: Routes = [
     Mariamgame1Component,
     Mariamgame2Component,
     WrongComponent,
-    CorrectComponent
+    CorrectComponent,
+    SummaryComponent
 ],
   imports: [
     BrowserModule,
@@ -51,7 +55,7 @@ const appRoutes: Routes = [
     MatListModule,
     MatToolbarModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MatCheckboxModule,
@@ -67,10 +71,13 @@ const appRoutes: Routes = [
     MatIconModule,
     MatExpansionModule,
     MatButtonToggleModule,
-   
+    AppRoutingModule
 ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
-  providers: [MariamService],
+  providers: [
+    MariamService,
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 
